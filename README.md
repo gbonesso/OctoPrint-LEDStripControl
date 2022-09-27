@@ -33,6 +33,5 @@ Authors:
 
 Configure the GPIO pins via the OctoPrint settings UI.
 
-## Disclaimer
+![OctoPrint Settings](/docs/img/OctoPrint_Settings_LEDStripControl.png)
 
-This is **not** an official Google product.
