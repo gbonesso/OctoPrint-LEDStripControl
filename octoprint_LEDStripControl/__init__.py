@@ -20,6 +20,7 @@ import re
 
 import octoprint.plugin
 import pigpio
+
 try:
 	import RPi.GPIO as GPIO
 except (ImportError, RuntimeError):
@@ -31,6 +32,7 @@ phy_to_bcm = { 0:None, 1:None, 2:None, 3:2, 4:None, 5:3, 6:None, 7:4, 8:14,
 			  17:None, 18:24, 19:10, 20:None, 21:9, 22:25, 23:11, 24:8, 25:None,
 			  26:7, 27:0, 28:1, 29:5, 30:None, 31:6, 32:12, 33:13, 34:None,
 			  35:19, 36:16, 37:26, 38:20, 39:None, 40:21 }
+
 
 class PiGPIOpin(object):
 	def __init__(self, pigpiod, pin, logger):
@@ -63,6 +65,7 @@ class PiGPIOpin(object):
 	def ChangeDutyCycle(self, dutycycle):
 		self._logger.debug(u"PiGPIOpin: ChangeDutyCycle() pin: %s" % self._pin)
 		self.start(dutycycle)
+
 
 class LEDStripControlPlugin(octoprint.plugin.AssetPlugin,
 							octoprint.plugin.SettingsPlugin,
@@ -195,17 +198,19 @@ class LEDStripControlPlugin(octoprint.plugin.AssetPlugin,
 
 				# version check: github repository
 				type="github_release",
-				user="google",
+				user="gbonesso",
 				repo="OctoPrint-LEDStripControl",
 				current=self._plugin_version,
 
 				# update method: pip
-				pip="https://github.com/google/OctoPrint-LEDStripControl/archive/{target_version}.zip"
+				pip="https://github.com/gbonesso/OctoPrint-LEDStripControl/archive/{target_version}.zip"
 			)
 		)
 
+
 __plugin_name__ = "LED Strip Control"
 __plugin_pythoncompat__ = ">=2.7,<4"
+
 
 def __plugin_load__():
 	global __plugin_implementation__

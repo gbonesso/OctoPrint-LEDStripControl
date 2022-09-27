@@ -18,11 +18,11 @@
 plugin_identifier = "LEDStripControl"
 plugin_package = "octoprint_LEDStripControl"
 plugin_name = "OctoPrint-LEDStripControl"
-plugin_version = "0.3.7"
+plugin_version = "0.3.8"
 plugin_description = """OctoPrint plugin for controling RGB LED Strips via local GPIO pins"""
-plugin_author = "Uriah Welcome"
-plugin_author_email = "uriah@google.com"
-plugin_url = "https://github.com/google/OctoPrint-LEDStripControl"
+plugin_author = "Gustavo Bonesso"
+plugin_author_email = "gustavo_bonesso@hotmail.com"
+plugin_url = "https://github.com/gbonesso/OctoPrint-LEDStripControl"
 plugin_license = "Apache"
 plugin_requires = ["RPi.GPIO", "pigpio==1.35"]
 
@@ -37,8 +37,9 @@ try:
 	import octoprint_setuptools
 except:
 	print("Could not import OctoPrint's setuptools, are you sure you are running that under "
-	      "the same python installation that OctoPrint is installed under?")
+		  "the same python installation that OctoPrint is installed under?")
 	import sys
+
 	sys.exit(-1)
 
 setup_parameters = octoprint_setuptools.create_plugin_setup_parameters(
@@ -59,6 +60,7 @@ setup_parameters = octoprint_setuptools.create_plugin_setup_parameters(
 
 if len(additional_setup_parameters):
 	from octoprint.util import dict_merge
+
 	setup_parameters = dict_merge(setup_parameters, additional_setup_parameters)
 
 setup(**setup_parameters)

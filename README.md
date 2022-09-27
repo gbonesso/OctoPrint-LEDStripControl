@@ -11,16 +11,19 @@ Implements the M150 command syntax from the latest Marlin.
         M150 R U B      ; Turn LED white
         M150 W          ; Turn LED white if using RGBW strips (optional)
 
+Authors:
+- Gustavo Bonesso (Current)
+- Uriah Welcome
+
 ## Setup
 
 1. Make sure that the OctoPrint user is in the gpio group via the following command.
 
     	usermod -a -G gpio pi
 
-1. Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
-or manually using this URL:
+1. Install via the bundled Plugin Manager or manually using this URL:
 
-    	https://github.com/google/OctoPrint-LEDStripControl/archive/master.zip
+    	https://github.com/gbonesso/OctoPrint-LEDStripControl/archive/master.zip
 
 1. Restart OctoPrint
 
